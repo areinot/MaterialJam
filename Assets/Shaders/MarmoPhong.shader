@@ -21,9 +21,11 @@ Shader "Custom/MarmoPhong"
 		
 		CGPROGRAM
 
-		// seems to be required for mac
-		#pragma glsl
-
+		#ifdef SHADER_API_OPENGL
+			// seems to be required for mac
+			#pragma glsl
+		#endif
+		
 		#pragma only_renderers d3d9 gles opengl
 		#pragma target 3.0
 		#pragma surface surfaceFunc MarmosetPhong addshadow
