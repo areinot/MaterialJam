@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{E2F337BA-AF97-2FD3-BF7F-87687F80E708}") = "MaterialJam", "Assembly-CSharp-vs.csproj", "{7B07B5BA-59B6-EE30-533A-EB8E247CCF5E}"
+Project("{E2F337BA-AF97-2FD3-BF7F-87687F80E708}") = "MaterialJam", "Assembly-CSharp-Editor-vs.csproj", "{3B206400-9762-9431-5B31-06E0C407A9E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7B07B5BA-59B6-EE30-533A-EB8E247CCF5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B07B5BA-59B6-EE30-533A-EB8E247CCF5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B07B5BA-59B6-EE30-533A-EB8E247CCF5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B07B5BA-59B6-EE30-533A-EB8E247CCF5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B206400-9762-9431-5B31-06E0C407A9E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B206400-9762-9431-5B31-06E0C407A9E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B206400-9762-9431-5B31-06E0C407A9E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B206400-9762-9431-5B31-06E0C407A9E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
