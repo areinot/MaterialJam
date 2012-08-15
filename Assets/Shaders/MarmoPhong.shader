@@ -2,16 +2,16 @@ Shader "Custom/MarmoPhong"
 {
 	Properties
 	{
-		_MainTex ("Diffuse (RGBA)", 2D) = "white" {}
-		_SpecTex ("Specular (RGB)", 2D) = "white" {}
-		_BumpMap ("Normalmap", 2D) 	= "bump" {}
-		_DIMCube ("DIM Cubemap", CUBE) = "" {}
-		_SIMCube ("SIM Cubemap", CUBE) = "" {}
 		_DiffClr ("Diffuse Color", Color) = (1,1,1,1)
 		_SpecClr ("Specular Color", Color) = (1,1,1,1)
 		_SpecInt ("Specular Intensity", Float) = 2.0
 		_SpecExp ("Specular Sharpness", Float) = 40.0
 		_FresnelExp ("Fresnel Exponent", Float) = 0.0
+		_MainTex ("Diffuse (RGBA)", 2D) = "white" {}
+		_SpecTex ("Specular (RGB)", 2D) = "white" {}
+		_BumpMap ("Normalmap", 2D) 	= "bump" {}
+		_DIMCube ("DIM Cubemap", CUBE) = "" {}
+		_SIMCube ("SIM Cubemap", CUBE) = "" {}
 	}
 	
 	SubShader
@@ -19,10 +19,14 @@ Shader "Custom/MarmoPhong"
 		Tags { "RenderType"="Opaque" }
 		LOD 200
 		
-		CGPROGRAM	 	
-		#pragma only_renderers d3d9
+		CGPROGRAM
+
+		// seems to be required for mac
+		#pragma glsl
+
+		#pragma only_renderers d3d9 gles opengl
 		#pragma target 3.0
-		#pragma surface surfaceFunc MarmosetPhong
+		#pragma surface surfaceFunc MarmosetPhong addshadow
 		#define ENV_STRENGTH 0.5
 		
 		sampler2D _MainTex;
