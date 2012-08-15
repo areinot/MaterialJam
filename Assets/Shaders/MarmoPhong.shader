@@ -79,6 +79,7 @@ Shader "Custom/MarmoPhong"
 		struct Input
 		{
 			float2 uv_MainTex;
+			float2 uv_SpecTex;
 			float2 uv_BumpMap;
 			float3 worldNormal;
 			float3 worldRefl;
@@ -93,7 +94,7 @@ Shader "Custom/MarmoPhong"
 			OUT.Albedo = alb.rgb;
 			OUT.Alpha = alb.a;
 			
-			half4 spec = tex2D( _SpecTex, IN.uv_MainTex );
+			half4 spec = tex2D( _SpecTex, IN.uv_SpecTex );
 			OUT_specularRGB = spec.rgb * _SpecClr.rgb * _SpecInt;
 			OUT.Specular = 0.3333*(OUT_specularRGB.r + OUT_specularRGB.g + OUT_specularRGB.b);
 			OUT.Gloss = spec.a * max(1.0,_SpecExp);
@@ -105,7 +106,7 @@ Shader "Custom/MarmoPhong"
 			const float envStrength = 1.0;
 			half3 DIM = texCUBE( _DIMCube, WorldNormalVector(IN,OUT.Normal) ).rgb * envStrength;
 			
-			float lod = 1.0 - log2( clamp(_SpecExp,0.0,256.0) );
+			float lod = 8.0*(1.1-clamp(_SpecExp/256.0,0.0,1.0));//1.0 - log2(clamp(_SpecExp,0.0,256.0));
 			half4 lookup = half4( WorldReflectionVector(IN, OUT.Normal), lod );
 			half3 SIM = texCUBElod( _SIMCube, lookup ).rgb * envStrength;
 			//half3 SIM = texCUBE( _SIMCube, WorldReflectionVector(IN, OUT.Normal) ).rgb * envStrength;

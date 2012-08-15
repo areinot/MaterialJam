@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: 540b2d838be79814680d244692be65dd
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 1
+    enableMipMap: 1
+    linearTexture: 1
+    correctGamma: 1
+    fadeOut: 0
+    borderMipMap: 1
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.250000
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 2
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 2
+    aniso: -1
+    mipBias: -1.000000
+    wrapMode: 1
+  nPOTScale: 1
+  lightmap: 0
+  textureType: 5
+  buildTargetSettings: []
